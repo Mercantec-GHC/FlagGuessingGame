@@ -1,4 +1,4 @@
-﻿using ArduinoLandeQuizAPI;
+﻿using FlagGuessingGameAPI;
 
 namespace H2Projekt.Infrastructure.Repositories
 {

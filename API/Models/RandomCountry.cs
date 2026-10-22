@@ -1,4 +1,4 @@
-﻿namespace ArduinoLandeQuizAPI.Models
+﻿namespace FlagGuessingGameAPI.Models
 {
     public class RandomCountry
     {

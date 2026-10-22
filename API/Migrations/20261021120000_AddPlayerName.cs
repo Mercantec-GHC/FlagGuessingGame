@@ -1,10 +1,10 @@
-using ArduinoLandeQuizAPI;
+using FlagGuessingGameAPI;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ArduinoLandeQuizAPI.Migrations;
+namespace FlagGuessingGameAPI.Migrations;
 
 [DbContext(typeof(AppDbContext))]
 [Migration("20261021120000_AddPlayerName")]

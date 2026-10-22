@@ -1,9 +1,9 @@
-using ArduinoLandeQuizAPI.Controllers.Commands;
-using ArduinoLandeQuizAPI.Models;
-using ArduinoLandeQuizAPI.Repositories;
+using FlagGuessingGameAPI.Controllers.Commands;
+using FlagGuessingGameAPI.Models;
+using FlagGuessingGameAPI.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ArduinoLandeQuizAPI.Controllers
+namespace FlagGuessingGameAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

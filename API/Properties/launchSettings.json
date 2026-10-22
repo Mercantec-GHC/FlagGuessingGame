@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "ArduinoLandeQuizAPI": {
+    "FlagGuessingGameAPI": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

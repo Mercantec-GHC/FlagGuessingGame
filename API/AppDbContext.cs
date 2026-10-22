@@ -1,7 +1,7 @@
-﻿using ArduinoLandeQuizAPI.Models;
+﻿using FlagGuessingGameAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ArduinoLandeQuizAPI
+namespace FlagGuessingGameAPI
 {
     public class AppDbContext : DbContext
     {

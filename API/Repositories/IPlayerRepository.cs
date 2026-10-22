@@ -1,7 +1,7 @@
-﻿using ArduinoLandeQuizAPI.Models;
+﻿using FlagGuessingGameAPI.Models;
 using H2Projekt.Infrastructure.Repositories;
 
-namespace ArduinoLandeQuizAPI.Repositories
+namespace FlagGuessingGameAPI.Repositories
 {
     public interface IPlayerRepository : IBaseRepository
     {

@@ -1,11 +1,11 @@
 using System.Globalization;
 using System.Text;
 using System.Text.Json;
-using ArduinoLandeQuizAPI.Models;
+using FlagGuessingGameAPI.Models;
 using Microsoft.Extensions.Caching.Memory;
 using SkiaSharp;
 
-namespace ArduinoLandeQuizAPI.Services
+namespace FlagGuessingGameAPI.Services
 {
     public sealed class CountryService
     {

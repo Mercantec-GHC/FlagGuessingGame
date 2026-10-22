@@ -70,3 +70,5 @@ Testing/
 **/obj/*
 **/bin/*
 **/.vs/*
+
+.env

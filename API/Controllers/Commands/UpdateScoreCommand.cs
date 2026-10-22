@@ -1,4 +1,4 @@
-﻿namespace ArduinoLandeQuizAPI.Controllers.Commands
+﻿namespace FlagGuessingGameAPI.Controllers.Commands
 {
     public class UpdateScoreCommand
     {

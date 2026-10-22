@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace ArduinoLandeQuizAPI.Migrations
+namespace FlagGuessingGameAPI.Migrations
 {
     /// <inheritdoc />
     public partial class Init : Migration

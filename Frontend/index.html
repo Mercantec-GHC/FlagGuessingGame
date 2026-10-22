@@ -1,0 +1,103 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekorder</title>
+
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4fc3f7;
+        }
+
+        ol {
+            background-color: #1e1e1e;
+            padding: 20px 20px 20px 45px;
+            border-radius: 10px;
+        }
+
+        li {
+            padding: 12px;
+            margin-bottom: 8px;
+            background-color: #2a2a2a;
+            border-radius: 6px;
+        }
+
+            li::marker {
+                color: #4fc3f7;
+                font-weight: bold;
+            }
+
+        .initials {
+            display: inline-block;
+            background-color: #4fc3f7;
+            color: #121212;
+            font-weight: bold;
+            text-align: center;
+            width: 30px;
+            padding: 6px 0;
+            margin-right: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rekord</h1>
+
+    <ol id="leaderboard"></ol>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const leaderboard = document.getElementById("leaderboard");
+
+            try {
+                const response = await fetch(
+                    "http://192.168.1.183:5169/api/Quiz/GetLeaderboard"
+                );
+
+                if (!response.ok) {
+                    throw new Error("Failed to load leaderboard");
+                }
+
+                const data = await response.json();
+
+                data.sort((a, b) => b.highScore - a.highScore);
+
+                data.forEach(player => {
+                    const listItem = document.createElement("li");
+
+                    // Temporary initials generated from the player ID
+                    const initials = String(player.id)
+                        .padStart(2, "0")
+                        .slice(-2);
+
+                    const badge = document.createElement("span");
+                    badge.className = "initials";
+                    badge.textContent = initials;
+
+                    const score = document.createElement("span");
+                    score.textContent = `Score: ${player.highScore}`;
+
+                    listItem.append(badge, score);
+                    leaderboard.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error(error);
+                leaderboard.textContent =
+                    "Could not load leaderboard.";
+            }
+        });
+    </script>
+</body>
+</html>
