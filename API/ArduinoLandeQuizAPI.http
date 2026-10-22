@@ -1,0 +1,29 @@
+@Host = http://localhost:5169
+
+GET {{Host}}/health
+
+###
+
+POST {{Host}}/api/Players/Create
+Content-Type: application/json
+
+{"name":"MJT"}
+
+###
+
+GET {{Host}}/api/Quiz/GetLeaderboard
+
+###
+
+GET {{Host}}/api/Quiz/GetRandomCountry?playerId=1&question=1
+
+###
+
+GET {{Host}}/api/Quiz/GetFlag/DNK
+
+###
+
+POST {{Host}}/api/Players/1/Score
+Content-Type: application/json
+
+{"score":14}
