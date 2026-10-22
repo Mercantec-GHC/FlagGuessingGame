@@ -19,13 +19,26 @@ namespace FlagGuessingGameAPI.Controllers
         [HttpPost("Create")]
         public async Task<int> CreatePlayer([FromBody] CreatePlayerCommand command, CancellationToken cancellationToken)
         {
-            return await _playerRepository.AddPlayerAsync(new Player { Name = command.Name }, cancellationToken);
+            var player = await _playerRepository.GetPlayerByNameAsync(command.Name, cancellationToken);
+
+            if (player is null)
+            {
+                player = new Player
+                {
+                    Name = command.Name,
+                    HighScore = 0
+                };
+
+                await _playerRepository.AddPlayerAsync(player, cancellationToken);
+            }
+
+            return player.Id;
         }
 
         [HttpGet("{playerId}")]
         public async Task<IActionResult> GetPlayer(int playerId, CancellationToken cancellationToken)
         {
-            var player = await _playerRepository.GetPlayerAsync(playerId, cancellationToken);
+            var player = await _playerRepository.GetPlayerByIdAsync(playerId, cancellationToken);
 
             if (player is null)
             {
@@ -44,7 +57,7 @@ namespace FlagGuessingGameAPI.Controllers
         [HttpPut("{playerId}/Score")]
         public async Task<IActionResult> UpdatePlayerScore(int playerId, [FromBody] UpdateScoreCommand command, CancellationToken cancellationToken)
         {
-            var player = await _playerRepository.GetPlayerAsync(playerId, cancellationToken);
+            var player = await _playerRepository.GetPlayerByIdAsync(playerId, cancellationToken);
 
             if (player is null)
             {

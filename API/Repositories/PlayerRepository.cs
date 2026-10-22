@@ -15,9 +15,14 @@ namespace FlagGuessingGameAPI.Repositories
             return await _appDbContext.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<Player?> GetPlayerAsync(int playerId, CancellationToken cancellationToken)
+        public async Task<Player?> GetPlayerByIdAsync(int playerId, CancellationToken cancellationToken)
         {
             return await _appDbContext.Players.FindAsync(playerId, cancellationToken);
+        }
+
+        public async Task<Player> GetPlayerByNameAsync(string name, CancellationToken cancellationToken)
+        {
+            return await _appDbContext.Players.FindAsync(name, cancellationToken);
         }
 
         public async Task<List<Player>> GetAllPlayersAsync(CancellationToken cancellationToken)

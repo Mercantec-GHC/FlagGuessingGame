@@ -65,8 +65,8 @@ namespace FlagGuessingGameAPI.Controllers
                     return BadRequest("Invalid image.");
                 }
 
-                const int width = 240;
-                const int height = 240;
+                const int width = 160;
+                const int height = 107;
 
                 using var bitmap = new SKBitmap(width, height);
                 using var canvas = new SKCanvas(bitmap);
