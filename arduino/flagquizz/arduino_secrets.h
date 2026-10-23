@@ -1,0 +1,2 @@
+#define SECRET_SSID "MAGS-OLC"
+#define SECRET_PASS "Merc1234!"
