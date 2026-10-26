@@ -1,205 +1,202 @@
-﻿
-<!doctype html>
+﻿<!doctype html>
 <html lang="da">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Rekorder | Flag Quiz</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rekorder | Flag Quiz</title>
 
-        <style>
-            * {
-                box-sizing: border-box;
-            }
+		<style>
+			* {
+				box-sizing: border-box;
+			}
 
-            body {
-                background: #000;
-                color: #fff;
-                font-family: "Courier New", monospace;
-                max-width: 560px;
-                margin: 0 auto;
-                padding: 60px 24px;
-            }
+			body {
+				background: #000;
+				color: #fff;
+				font-family: "Courier New", monospace;
+				max-width: 560px;
+				margin: 0 auto;
+				padding: 60px 24px;
+			}
 
-            header {
-                text-align: center;
-                margin-bottom: 48px;
-            }
+			header {
+				text-align: center;
+				margin-bottom: 48px;
+			}
 
-            .subtitle {
-                color: #ffe000;
-                font-size: 14px;
-                font-weight: bold;
-                letter-spacing: 3px;
-            }
+			.subtitle {
+				color: #ffe000;
+				font-size: 14px;
+				font-weight: bold;
+				letter-spacing: 3px;
+			}
 
-            h1 {
-                font-size: 36px;
-                margin: 14px 0;
-                letter-spacing: 2px;
-            }
+			h1 {
+				font-size: 36px;
+				margin: 14px 0;
+				letter-spacing: 2px;
+			}
 
-            .description {
-                color: #888;
-                font-size: 12px;
-                letter-spacing: 2px;
-            }
+			.description {
+				color: #888;
+				font-size: 12px;
+				letter-spacing: 2px;
+			}
 
-            .leaderboard-header {
-                display: flex;
-                justify-content: space-between;
-                color: #888;
-                font-size: 12px;
-                letter-spacing: 1px;
-                padding: 15px 0;
-                border-bottom: 1px solid #444;
-            }
+			.leaderboard-header {
+				display: flex;
+				justify-content: space-between;
+				color: #888;
+				font-size: 12px;
+				letter-spacing: 1px;
+				padding: 15px 0;
+				border-bottom: 1px solid #444;
+			}
 
-            ol {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
+			ol {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
 
-            li {
-                display: flex;
-                align-items: center;
-                gap: 20px;
-                min-height: 66px;
-                border-bottom: 1px solid #222;
-            }
+			li {
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				min-height: 66px;
+				border-bottom: 1px solid #222;
+			}
 
-            .rank {
-                color: #777;
-                font-size: 14px;
-                min-width: 28px;
-            }
+			.rank {
+				color: #777;
+				font-size: 14px;
+				min-width: 28px;
+			}
 
-            li:first-child .rank {
-                color: #ffe000;
-            }
+			li:first-child .rank {
+				color: #ffe000;
+			}
 
-            .initials {
-                font-size: 20px;
-                font-weight: bold;
-                letter-spacing: 2px;
-            }
+			.initials {
+				font-size: 20px;
+				font-weight: bold;
+				letter-spacing: 2px;
+			}
 
-            .score {
-                margin-left: auto;
-                font-size: 20px;
-                font-weight: bold;
-                color: #ffe000;
-            }
+			.score {
+				margin-left: auto;
+				font-size: 20px;
+				font-weight: bold;
+				color: #ffe000;
+			}
 
-            .status {
-                color: #888;
-                text-align: center;
-                font-size: 14px;
-                padding: 36px 0;
-            }
+			.status {
+				color: #888;
+				text-align: center;
+				font-size: 14px;
+				padding: 36px 0;
+			}
 
-            footer {
-                margin-top: 48px;
-                text-align: center;
-                color: #555;
-                font-size: 11px;
-                letter-spacing: 1px;
-            }
+			footer {
+				margin-top: 48px;
+				text-align: center;
+				color: #555;
+				font-size: 11px;
+				letter-spacing: 1px;
+			}
 
-            @media (max-width: 480px) {
-                body {
-                    padding: 42px 20px;
-                }
+			@media (max-width: 480px) {
+				body {
+					padding: 42px 20px;
+				}
 
-                h1 {
-                    font-size: 28px;
-                }
+				h1 {
+					font-size: 28px;
+				}
 
-                .initials,
-                .score {
-                    font-size: 18px;
-                }
+				.initials,
+				.score {
+					font-size: 18px;
+				}
 
-                li {
-                    min-height: 58px;
-                }
-            }
-        </style>
-    </head>
+				li {
+					min-height: 58px;
+				}
+			}
+		</style>
+	</head>
 
-    <body>
-        <header>
-            <div class="subtitle">FLAG QUIZ</div>
-            <h1>REKORDER</h1>
-            <div class="description">HIGHSCORES</div>
-        </header>
+	<body>
+		<header>
+			<div class="subtitle">FLAG QUIZ</div>
+			<h1>REKORDER</h1>
+			<div class="description">HIGHSCORES</div>
+		</header>
 
-        <main>
-            <div class="leaderboard-header">
-                <span>SPILLER</span>
-                <span>SCORE</span>
-            </div>
+		<main>
+			<div class="leaderboard-header">
+				<span>SPILLER</span>
+				<span>SCORE</span>
+			</div>
 
-            <ol id="leaderboard" aria-live="polite">
-                <li class="status">Indlæser rekorder...</li>
-            </ol>
-        </main>
+			<ol id="leaderboard" aria-live="polite">
+				<li class="status">Indlæser rekorder...</li>
+			</ol>
+		</main>
 
-        <footer>ARDUINO OPLÀ &bull; FLAG QUIZ</footer>
+		<script>
+			document.addEventListener("DOMContentLoaded", async () => {
+				const leaderboard = document.getElementById("leaderboard");
 
-        <script>
-            document.addEventListener("DOMContentLoaded", async () => {
-                const leaderboard = document.getElementById("leaderboard");
+				try {
+					const response = await fetch("http://192.168.1.183:5169/api/Quiz/GetLeaderboard");
 
-                try {
-                    const response = await fetch("http://192.168.1.183:5169/api/Quiz/GetLeaderboard");
+					if (!response.ok) {
+						throw new Error("Failed to load leaderboard");
+					}
 
-                    if (!response.ok) {
-                        throw new Error("Failed to load leaderboard");
-                    }
+					const data = await response.json();
 
-                    const data = await response.json();
+					if (!Array.isArray(data)) {
+						throw new Error("Invalid leaderboard response");
+					}
 
-                    if (!Array.isArray(data)) {
-                        throw new Error("Invalid leaderboard response");
-                    }
+					data.sort((a, b) => b.highScore - a.highScore);
 
-                    data.sort((a, b) => b.highScore - a.highScore);
+					leaderboard.replaceChildren();
 
-                    leaderboard.replaceChildren();
+					if (data.length === 0) {
+						leaderboard.textContent = "Ingen rekorder endnu.";
+						leaderboard.classList.add("status");
+						return;
+					}
 
-                    if (data.length === 0) {
-                        leaderboard.textContent = "Ingen rekorder endnu.";
-                        leaderboard.classList.add("status");
-                        return;
-                    }
+					data.forEach((player, index) => {
+						const listItem = document.createElement("li");
 
-                    data.forEach((player, index) => {
-                        const listItem = document.createElement("li");
+						const rank = document.createElement("span");
+						rank.className = "rank";
+						rank.textContent = String(index + 1).padStart(2, "0");
 
-                        const rank = document.createElement("span");
-                        rank.className = "rank";
-                        rank.textContent = String(index + 1).padStart(2, "0");
+						const initials = document.createElement("span");
+						initials.className = "initials";
+						initials.textContent = player.name;
 
-                        const initials = document.createElement("span");
-                        initials.className = "initials";
-                        initials.textContent = player.name;
+						const score = document.createElement("span");
+						score.className = "score";
+						score.textContent = player.highScore;
 
-                        const score = document.createElement("span");
-                        score.className = "score";
-                        score.textContent = player.highScore;
+						listItem.append(rank, initials, score);
+						leaderboard.appendChild(listItem);
+					});
+				} catch (error) {
+					console.error(error);
 
-                        listItem.append(rank, initials, score);
-                        leaderboard.appendChild(listItem);
-                    });
-                } catch (error) {
-                    console.error(error);
-
-                    leaderboard.replaceChildren();
-                    leaderboard.classList.add("status");
-                    leaderboard.textContent = "Kunne ikke indlæse rekorder.";
-                }
-            });
-        </script>
-    </body>
+					leaderboard.replaceChildren();
+					leaderboard.classList.add("status");
+					leaderboard.textContent = "Kunne ikke indlæse rekorder.";
+				}
+			});
+		</script>
+	</body>
 </html>
